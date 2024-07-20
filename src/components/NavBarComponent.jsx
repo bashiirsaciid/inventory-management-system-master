@@ -25,7 +25,6 @@ import { useState } from "react";
 export default function NavBarComponent() {
   const [notificationAnchorEl, setNotificationAnchorEl] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
-  // handleNotificationClicked
   const open = Boolean(anchorEl);
   const notificationOpen = Boolean(notificationAnchorEl);
   const handleAvatarClicked = (event) => {
@@ -46,7 +45,7 @@ export default function NavBarComponent() {
     <Grid container>
       <Grid item md={12}>
         <Paper elevation={4}>
-          <AppBar sx={{ padding: 2 }} position="static">
+          <AppBar sx={{ padding: 2, bgcolor: "primary.main" }} position="static">
             <Container maxWidth="xxl">
               <Box
                 sx={{
@@ -81,7 +80,7 @@ export default function NavBarComponent() {
                   <IconButton color="inherit">
                     <Badge variant="dot" color="error" invisible={false}>
                       <NotificationsOutlined
-                        sx={{ width: 32, height: 32 }}
+                        sx={{ width: 32, height: 32, color: "white" }}
                         onClick={handleNotificationClicked}
                       />
                     </Badge>
@@ -104,10 +103,10 @@ export default function NavBarComponent() {
                     aria-haspopup="true"
                   >
                     <Tooltip title="account settings">
-                      <Avatar sx={{ width: 32, height: 32 }}>Z</Avatar>
+                      <Avatar sx={{ width: 32, height: 32, bgcolor: "secondary.main" }}>Z</Avatar>
                     </Tooltip>
                   </IconButton>
-                  <Typography fontFamily={"Inter"}>Bashiir Saciid</Typography>
+                  <Typography fontFamily={"Inter"} sx={{ color: "white" }}>Bashiir Saciid</Typography>
                 </Box>
 
                 <Menu
@@ -144,33 +143,4 @@ export default function NavBarComponent() {
       </Grid>
     </Grid>
   );
-}
-
-{
-  /* <Grid item md={7}>
-                  <Paper
-                    component="form"
-                    sx={{
-                      p: "2px 4px",
-                      width: "50%",
-                      mx: "auto",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <InputBase
-                      sx={{ ml: 1, flex: 1 }}
-                      placeholder="Search "
-                      inputProps={{ "aria-label": "search" }}
-                    />
-                    <IconButton
-                      type="button"
-                      sx={{ p: "10px" }}
-                      aria-label="search"
-                    >
-                      <Search />
-                    </IconButton>
-                  </Paper>
-                </Grid> */
 }
